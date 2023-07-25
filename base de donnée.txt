@@ -1,0 +1,9 @@
+base de donnees
+
+
+create database ratrapage;
+use ratrapage;
+
+create table patient(numPatient varchar(10) primary key, nomComplet varchar(50));
+create table medicament(idM integer(5) primary key auto_increment, libelle varchar(30));
+create table rendezvous(id integer(5) primary key auto_increment, date varchar(20), etat varchar(20), type varchar(20) null, medecin varchar(30),numP integer(5),typerendezvous integer(1), foreign key(numP) references patient(numPatient));
